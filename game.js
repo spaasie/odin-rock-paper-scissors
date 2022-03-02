@@ -25,7 +25,22 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-const playerSelection = "rock";
-const computerSelection = computerPlay();
+function game() {
+  let score = 0;
+  let computerScore = 0;
+  for (let i = 0; i < 5; i++) {
+    const playerSelection = prompt("Choose either, Rock, Paper or Scissors", "rock").toLowerCase();
+    const computerSelection = computerPlay();
 
-console.log(playRound(playerSelection, computerSelection));
+    const result = playRound(playerSelection, computerSelection);
+    console.log(result);
+    // check if second word is Win! then increase score with 1
+    if (result.split(" ")[1] === "Win!") {
+      score++;
+    } else if (result.split(" ")[1] === "Lose!") {
+      computerScore++;
+    }
+  }
+  console.log(`Your score is: ${score} to ${computerScore} out of 5 games`);
+}
+

@@ -10,6 +10,7 @@ function computerPlay() {
 
 const selectionComputer = document.querySelector("#selection-computer");
 const selectionPlayer = document.querySelector("#selection-player");
+const scoreResult = document.querySelector("#score-result");
 const scoreInfo = document.querySelector("#score-info");
 const scoreComputer = document.querySelector("#score-computer");
 const scorePlayer = document.querySelector("#score-player");
@@ -18,27 +19,35 @@ function playRound(playerSelection, computerSelection) {
   selectionComputer.textContent = computerSelection;
   selectionPlayer.textContent = playerSelection;
   if (playerSelection === computerSelection) {
-    scoreInfo.textContent = "That is a draw, try again...";
+    scoreResult.textContent = "It's a Draw";
+    scoreInfo.textContent = "try again...";
   } else if (playerSelection === "rock" && computerSelection === "paper") {
-    scoreInfo.textContent = "You Lose! Paper beats Rock";
+    scoreResult.textContent = "You Lose!";
+    scoreInfo.textContent = "Paper beats Rock";
     updateScoreComputer++;
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
-    scoreInfo.textContent = "You Lose! Scissors beats Paper";
+    scoreResult.textContent = "You Lose!";
+    scoreInfo.textContent = "Scissors beats Paper";
     updateScoreComputer++;
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
-    scoreInfo.textContent = "You Lose! Rock beats Scissors";
+    scoreResult.textContent = "You Lose!";
+    scoreInfo.textContent = "Rock beats Scissors";
     updateScoreComputer++;
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
-    scoreInfo.textContent = "You Win! Rock beats Scissors";
+    scoreResult.textContent = "You Win!";
+    scoreInfo.textContent = "Rock beats Scissors";
     updateScorePlayer++;
   } else if (playerSelection === "paper" && computerSelection === "rock") {
-    scoreInfo.textContent = "You Win! Paper beats Rock";
+    scoreResult.textContent = "You Win!";
+    scoreInfo.textContent = "Paper beats Rock";
     updateScorePlayer++;
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
-    scoreInfo.textContent = "You Win! Scissors beats Paper";
+    scoreResult.textContent = "You Win!";
+    scoreInfo.textContent = "Scissors beats Paper";
     updateScorePlayer++;
   } else {
-    scoreInfo.textContent = "Error! You broke the game";
+    scoreResult.textContent = "Error!";
+    scoreInfo.textContent = "You broke the game";
   }
   scoreComputer.textContent = updateScoreComputer;
   scorePlayer.textContent = updateScorePlayer;

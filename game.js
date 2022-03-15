@@ -91,14 +91,21 @@ function playRound(playerSelection, computerSelection) {
   endGame();
 }
 
+const selectionButtons = document.querySelector('#selection-buttons');
+
 function endGame() {
   if (updateScoreComputer === 5 || updateScorePlayer === 5) {
     scoreResult.textContent = "We have a winner";
     if (updateScoreComputer === 5) {
       scoreInfo.textContent = "The Computer Won";
+      selectionComputer.style.backgroundImage = "url('img/awesome.png')";
+      selectionPlayer.style.backgroundImage = "url('img/head-bandage.png')";
     } else {
       scoreInfo.textContent = "You won!";
+      selectionComputer.style.backgroundImage = "url('img/head-bandage.png')";
+      selectionPlayer.style.backgroundImage = "url('img/awesome.png')";
     }
+    selectionButtons.style.display = "none";
   }
 }
 

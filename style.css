@@ -1,47 +1,99 @@
+@font-face {
+  font-family: "Permanent Marker";
+  src: url("fonts/Permanent_Marker/PermanentMarker-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Patrick Hand";
+  src: url("fonts/Patrick_Hand/PatrickHand-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Indie Flower";
+  src: url("fonts/Indie_Flower/IndieFlower-Regular.ttf") format("truetype");
+}
+
+:root {
+  --light-gray: rgb(240, 240, 240);
+  --green: #8ffac8c7;
+}
+
 body {
   display: flex;
   justify-content: space-around;
-  background-color: lightgray;
+  background-color: var(--light-gray);
+  user-select: none;
+  font-family: "Patrick Hand";
 }
 
 main {
+  box-sizing: border-box;
   flex-basis: 500px;
   background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   text-align: center;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
+header h1 {
+  font-family: "Permanent Marker";
+  font-size: 3rem;
+  margin: 5px;
+}
+
+p,
+span {
+  font-size: 1.2rem;
+  line-height: 0.8rem;
+}
+
+p {
+  margin: 1rem;
+}
 #score {
   padding: 20px;
   height: 100px;
-  background-color: rgb(208, 255, 0);
+  position: relative;
 }
 
 #score-computer,
 #score-player {
-  font-size: 2rem;
+  position: absolute;
+  font-family: "Indie Flower";
+  font-size: 5rem;
+  top: 4rem;
+}
+
+#score-computer {
+  left: 10%;
+}
+
+#score-player {
+  right: 10%;
 }
 
 #field {
   padding: 20px;
   position: relative;
   height: 100px;
-  background-color: aqua;
+  background-color: var(--green);
   display: flex;
   justify-content: center;
-  border: 2px solid black
+  border: 3px solid black;
+  border-radius: 15px;
+/*   box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2); */
 }
 
 #computer,
 #player {
-  /* display: inline-block; */
   position: absolute;
   width: 5rem;
   height: 0rem;
   top: 50%;
-  /* bottom: 50%; */
+  font-size: 1.3rem;
 }
 
 #computer {
@@ -71,7 +123,7 @@ main {
 #selection-buttons {
   padding: 20px;
   height: 100px;
-  background-color: aquamarine;
+  border-radius: 0 0 15px 15px;
 }
 
 .selection-buttons p {
@@ -83,6 +135,15 @@ main {
   height: 50px;
 }
 
+.selection-buttons button {
+  background-color: var(--light-gray);
+  border-radius: 10px;
+  border: solid 2px black;
+  box-shadow: 4px 4px 3px rgba(0,0,0, 0.2)
+}
+
 .selection-buttons button:hover {
   cursor: pointer;
+  background-color: var(--green);
+  scale: 1.05;
 }

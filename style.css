@@ -1,6 +1,6 @@
 body {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   background-color: lightgray;
 }
 
@@ -9,8 +9,73 @@ main {
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
+}
+
+#score {
+  padding: 20px;
+  height: 100px;
+  background-color: rgb(208, 255, 0);
+}
+
+#score-computer,
+#score-player {
+  font-size: 2rem;
+}
+
+#field {
+  padding: 20px;
+  position: relative;
+  height: 100px;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  border: 2px solid black
+}
+
+#computer,
+#player {
+  /* display: inline-block; */
+  position: absolute;
+  width: 5rem;
+  height: 0rem;
+  top: 50%;
+  /* bottom: 50%; */
+}
+
+#computer {
+  transform: rotate(-90deg);
+  left: 0;
+}
+
+#player {
+  transform: rotate(90deg);
+  right: 0;
+}
+
+#selection-computer,
+#selection-player {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 90px;
+  width: 90px;
+}
+
+#selection-computer {
+  transform: scaleX(-1)
+}
+
+#selection-buttons {
+  padding: 20px;
+  height: 100px;
+  background-color: aquamarine;
+}
+
+.selection-buttons p {
+  margin-top: 0;
 }
 
 .selection-buttons img {

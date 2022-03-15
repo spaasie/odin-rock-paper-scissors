@@ -51,8 +51,10 @@ const scoreComputer = document.querySelector("#score-computer");
 const scorePlayer = document.querySelector("#score-player");
 
 function playRound(playerSelection, computerSelection) {
-  selectionComputer.textContent = computerSelection;
-  selectionPlayer.textContent = playerSelection;
+  // selectionComputer.textContent = computerSelection;
+  selectionComputer.style.backgroundImage = `url("img/${computerSelection}.png")`;
+  // selectionPlayer.textContent = playerSelection;
+  selectionPlayer.style.backgroundImage = `url("img/${playerSelection}.png")`;
   if (playerSelection === computerSelection) {
     scoreResult.textContent = randomText("draw");
     scoreInfo.textContent = "try again...";

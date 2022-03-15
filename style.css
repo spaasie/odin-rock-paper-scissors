@@ -1,0 +1,23 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: lightgray;
+}
+
+main {
+  flex-basis: 500px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.selection-buttons img {
+  width: 50px;
+  height: 50px;
+}
+
+.selection-buttons button:hover {
+  cursor: pointer;
+}

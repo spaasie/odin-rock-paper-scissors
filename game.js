@@ -51,9 +51,7 @@ const scoreComputer = document.querySelector("#score-computer");
 const scorePlayer = document.querySelector("#score-player");
 
 function playRound(playerSelection, computerSelection) {
-  // selectionComputer.textContent = computerSelection;
   selectionComputer.style.backgroundImage = `url("img/${computerSelection}.png")`;
-  // selectionPlayer.textContent = playerSelection;
   selectionPlayer.style.backgroundImage = `url("img/${playerSelection}.png")`;
   if (playerSelection === computerSelection) {
     scoreResult.textContent = randomText("draw");
@@ -92,6 +90,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 const selectionButtons = document.querySelector('#selection-buttons');
+const restart = document.querySelector('#restart');
 
 function endGame() {
   if (updateScoreComputer === 5 || updateScorePlayer === 5) {
@@ -106,6 +105,7 @@ function endGame() {
       selectionPlayer.style.backgroundImage = "url('img/awesome.png')";
     }
     selectionButtons.style.display = "none";
+    restart.style.display = "block";
   }
 }
 
@@ -116,3 +116,5 @@ buttons.forEach(button => {
     playRound(button.id, computerPlay());
   });
 });
+
+restart.addEventListener("click", () => location.reload(true) )

@@ -9,27 +9,29 @@
   <script src="game.js" defer></script> 
 </head>
 <body>
-  <main>
-    <header>
-      <h1>Gang Sign Wars</h1>
-    </header>
-    <section id="score">
-      <span id="score-computer"></span>
-      <!-- <span>score</span> -->
-      <span id="score-player"></span>
-      <p id="score-result"></p>
-      <p id="score-info"></p>
-    </section>
-  
-    <section id="field">
-      <span id="computer">computer</span>
-      <span class="selections">
+  <div class="container">
+
+    <main>
+      <header>
+        <h1>Gang Sign Wars</h1>
+      </header>
+      <section id="score">
+        <span id="score-computer"></span>
+        <!-- <span>score</span> -->
+        <span id="score-player"></span>
+        <p id="score-result"></p>
+        <p id="score-info"></p>
+      </section>
+      
+      <section id="field">
+        <span id="computer">computer</span>
+        <span class="selections">
         <span id="selection-computer"></span>
         <span id="selection-player"></span>
       </span>
       <span id="player">player</span>
     </section>
-  
+    
     <section id="selection-buttons" class="selection-buttons">
       <p>Choose your Gang sign</p>
       <button id="rock">
@@ -43,5 +45,12 @@
       </button>
     </section>
   </main>
+  
+  <section id="restart">
+    <button>
+      Restart
+    </button>
+  </section>
+  </div>
 </body>
 </html>

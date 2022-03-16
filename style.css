@@ -20,19 +20,23 @@
 
 body {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   background-color: var(--light-gray);
   user-select: none;
   font-family: "Patrick Hand";
 }
 
+.container {
+  flex-basis: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
 main {
   box-sizing: border-box;
-  flex-basis: 500px;
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   text-align: center;
   border-radius: 15px;
   box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
@@ -84,7 +88,6 @@ p {
   justify-content: center;
   border: 3px solid black;
   border-radius: 15px;
-/*   box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2); */
 }
 
 #computer,
@@ -142,8 +145,30 @@ p {
   box-shadow: 4px 4px 3px rgba(0,0,0, 0.2)
 }
 
-.selection-buttons button:hover {
+.selection-buttons button:hover,
+#restart button:hover {
   cursor: pointer;
   background-color: var(--green);
   scale: 1.05;
+}
+
+#restart {
+  display: none;
+  align-self: center;
+}
+
+#restart button {
+  background-color: white;
+  border-radius: 20px;
+  border: solid 3px black;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+  margin-top: 50px;
+  padding: 10px 20px;
+  font-family: "Indie Flower";
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#restart button:hover {
+  
 }

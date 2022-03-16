@@ -17,19 +17,23 @@ function randomText(type) {
     "It's a Draw",
     "That's a Tie",
     "Snap",
-    "Great minds think alike"
+    "Great minds think alike",
+    "Copy cat"
   ]
   const winStrings = [
-    "Gratz! You Win!",
-    "Yeay! Winning!",
-    "Super! You Won!",
-    "Styling, we have a winner"
+    "Gratz, You Win!",
+    "Yeay, Winning!",
+    "Super, You Won!",
+    "Styling, we have a winner",
+    "Great, Keep it up"
   ]
   const loseStrings = [
     "Soz, You Lost",
     "Too bad, Your loss",
     "Better luck next time",
-    "You Lose this one"
+    "You Lose this one",
+    "Oef, not this one",
+    "Almost, but not"
   ]
   switch (type) {
     case "draw":
@@ -43,44 +47,66 @@ function randomText(type) {
   }
 }
 
+function fieldColor(status) {
+  switch (status) {
+    case "win":
+      field.style.backgroundColor = "var(--green)";
+      break;
+    case "draw":
+      field.style.backgroundColor = "var(--yellow)";
+      break;
+    case "lose":
+      field.style.backgroundColor = "var(--red)";
+  }
+}
+
 const selectionComputer = document.querySelector("#selection-computer");
 const selectionPlayer = document.querySelector("#selection-player");
 const scoreResult = document.querySelector("#score-result");
 const scoreInfo = document.querySelector("#score-info");
 const scoreComputer = document.querySelector("#score-computer");
 const scorePlayer = document.querySelector("#score-player");
+const field = document.querySelector("#field");
 
 function playRound(playerSelection, computerSelection) {
   selectionComputer.style.backgroundImage = `url("img/${computerSelection}.png")`;
   selectionPlayer.style.backgroundImage = `url("img/${playerSelection}.png")`;
   if (playerSelection === computerSelection) {
+    fieldColor("draw");
     scoreResult.textContent = randomText("draw");
     scoreInfo.textContent = "try again...";
   } else if (playerSelection === "rock" && computerSelection === "paper") {
+    fieldColor("lose");
     scoreResult.textContent = randomText("lose");
     scoreInfo.textContent = "Paper beats Rock";
     updateScoreComputer++;
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
+    fieldColor("lose");
     scoreResult.textContent = randomText("lose");
     scoreInfo.textContent = "Scissors beats Paper";
     updateScoreComputer++;
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
+    fieldColor("lose");
     scoreResult.textContent = randomText("lose");
     scoreInfo.textContent = "Rock beats Scissors";
     updateScoreComputer++;
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
+    fieldColor("win");
     scoreResult.textContent = randomText("win");
     scoreInfo.textContent = "Rock beats Scissors";
     updateScorePlayer++;
   } else if (playerSelection === "paper" && computerSelection === "rock") {
+    fieldColor("win");
     scoreResult.textContent = randomText("win");
     scoreInfo.textContent = "Paper beats Rock";
     updateScorePlayer++;
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
+    fieldColor("win");
     scoreResult.textContent = randomText("win");
     scoreInfo.textContent = "Scissors beats Paper";
     updateScorePlayer++;
   } else {
+    fieldColor("lose");
     scoreResult.textContent = "Error!";
     scoreInfo.textContent = "You broke the game";
   }
@@ -96,10 +122,12 @@ function endGame() {
   if (updateScoreComputer === 5 || updateScorePlayer === 5) {
     scoreResult.textContent = "We have a winner";
     if (updateScoreComputer === 5) {
+      fieldColor("lose");
       scoreInfo.textContent = "The Computer Won";
       selectionComputer.style.backgroundImage = "url('img/awesome.png')";
       selectionPlayer.style.backgroundImage = "url('img/head-bandage.png')";
     } else {
+      fieldColor("win");
       scoreInfo.textContent = "You won!";
       selectionComputer.style.backgroundImage = "url('img/head-bandage.png')";
       selectionPlayer.style.backgroundImage = "url('img/awesome.png')";

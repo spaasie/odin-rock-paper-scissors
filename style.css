@@ -15,7 +15,10 @@
 
 :root {
   --light-gray: rgb(240, 240, 240);
-  --green: #8ffac8c7;
+  --green: rgba(143, 250, 200, 0.7);
+  --red: rgba(255, 80, 80, 0.7);
+  --yellow: rgba(248, 248, 99, 0.7);
+  --blue: rgba(136, 225, 255, 0.7);
 }
 
 body {
@@ -79,11 +82,15 @@ p {
   right: 10%;
 }
 
+#score-result {
+  font-size: 1.4rem;
+}
+
 #field {
   padding: 20px;
   position: relative;
   height: 100px;
-  background-color: var(--green);
+  background-color: var(--yellow);
   display: flex;
   justify-content: center;
   border: 3px solid black;
@@ -148,7 +155,7 @@ p {
 .selection-buttons button:hover,
 #restart button:hover {
   cursor: pointer;
-  background-color: var(--green);
+  background-color: var(--blue);
   scale: 1.05;
 }
 

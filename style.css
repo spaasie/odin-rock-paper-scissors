@@ -90,7 +90,7 @@ p {
   padding: 20px;
   position: relative;
   height: 100px;
-  background-color: var(--yellow);
+  background-color: var(--light-gray);
   display: flex;
   justify-content: center;
   border: 3px solid black;
@@ -174,8 +174,4 @@ p {
   font-family: "Indie Flower";
   font-size: 2rem;
   font-weight: bold;
-}
-
-#restart button:hover {
-  
 }
